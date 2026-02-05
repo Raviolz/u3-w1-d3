@@ -14,6 +14,7 @@ const commentsURL = "https://striveschool-api.herokuapp.com/api/comments/"
 
 import { Component } from "react"
 import { ListGroup } from "react-bootstrap"
+import CommentsList from "./CommentList"
 
 class CommentsArea extends Component {
   state = { comments: [] }
@@ -53,14 +54,7 @@ class CommentsArea extends Component {
           Commenti del libro: <strong>{this.props.asin}</strong>
         </p>
 
-        <ListGroup>
-          {this.state.comments.map((c) => (
-            <ListGroup.Item key={c._id}>
-              <div>{c.comment}</div>
-              <small className="text-muted">Voto: {c.rate}</small>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
+        <CommentsList comments={this.state.comments} />
       </>
     )
   }

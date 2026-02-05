@@ -25,11 +25,7 @@ class BookList extends Component {
                   }
                 />
 
-                {isSelected && (
-                  <div style={{ position: "sticky", top: "1rem" }} className="mt-2">
-                    <CommentsArea asin={book.asin} />
-                  </div>
-                )}
+                {isSelected && <div style={{ position: "sticky", top: "1rem" }} className="mt-2"></div>}
               </Col>
             )
           })}

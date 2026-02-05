@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { Col, Card, Button } from "react-bootstrap"
+import CommentsArea from "./CommentsArea"
 
 //const SingleBook = ({ book }) => (
 //<Card className="h-100">
@@ -25,6 +26,7 @@ class SingleBook extends Component {
             </Button>
           </Card.Body>
         </Card>
+        {this.props.isSelected && <CommentsArea asin={this.props.book.asin} />}
       </>
     )
   }

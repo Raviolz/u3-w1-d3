@@ -1,6 +1,6 @@
 import { Component } from "react"
 import { Col, Card, Button } from "react-bootstrap"
-import { CommentsArea } from "./CommentsArea"
+import CommentsArea from "./CommentsArea"
 
 //const SingleBook = ({ book }) => (
 //<Card className="h-100">
@@ -25,11 +25,11 @@ class SingleBook extends Component {
           <Card.Body className="d-flex flex-column">
             <Card.Title>{this.props.book.title}</Card.Title>
             <Button variant="primary" className="mt-auto">
-              Go somewhere
+              Vai al libro
             </Button>
+            {this.state.selected && <CommentsArea />}
           </Card.Body>
         </Card>
-        <CommentsArea> </CommentsArea>
       </>
     )
   }
